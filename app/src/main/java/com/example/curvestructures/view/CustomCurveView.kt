@@ -1,6 +1,7 @@
 package com.example.curvestructures.view
 
 import android.content.Context
+import android.graphics.Canvas
 import android.util.AttributeSet
 import android.view.View
 
@@ -10,4 +11,12 @@ class CustomCurveView @JvmOverloads constructor(
     defStyleAttr: Int = 0,
     defStyleRes: Int = 0,
 ) : View(context, attributeSet, defStyleAttr, defStyleRes) {
+
+    private val painter = Painter()
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        canvas?.let(painter::paint)
+    }
+
 }
