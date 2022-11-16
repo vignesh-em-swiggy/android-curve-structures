@@ -71,20 +71,8 @@ class Painter(@ColorInt color: Int, private val resources: Resources) {
         arcTo(square1, 180f, 90f)
         arcTo(square2, 270f, 90f)
         arcTo(square3, 0f, 90f)
-        points.first().run { lineTo(x, y) }
-        drawQuadCurveThrough(this, points)
-        points.last().run { lineTo(x, y) }
         arcTo(square4, 90f, 90f)
 
         canvas.plotPoints(points, Color.WHITE)
-    }
-
-    private fun drawQuadCurveThrough(path: Path, points: List<PointF>) {
-        for (i in 0 until points.size - 1) {
-            val p0 = points[i]
-            val p1 = points[i + 1]
-            val mid = midPoint(p0, p1)
-            path.quadTo(p0.x, p0.y, mid.x, mid.y)
-        }
     }
 }
