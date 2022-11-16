@@ -48,8 +48,6 @@ class Painter(@ColorInt color: Int, private val resources: Resources) {
             tailWidth,
             tailHeight)
 
-        canvas.drawRect(square5, Color.RED)
-
         val points = listOf(
             PointF(square5.topRight.x + (tailWidth * 0.5f), square5.topRight.y),
             square5.topRight,
@@ -62,11 +60,6 @@ class Painter(@ColorInt color: Int, private val resources: Resources) {
             square5.topLeft,
             PointF(square5.topLeft.x - (tailWidth * 0.5f), square5.topLeft.y),
         )
-
-        canvas.drawRect(square1, Color.RED)
-        canvas.drawRect(square2, Color.RED)
-        canvas.drawRect(square3, Color.RED)
-        canvas.drawRect(square4, Color.RED)
 
         arcTo(square1, 180f, 90f)
         arcTo(square2, 270f, 90f)
