@@ -17,7 +17,7 @@ class CustomCurveView @JvmOverloads constructor(
 
     init {
         setBackgroundColor(Color.BLACK)
-        painter = Painter(Color.GREEN)
+        painter = Painter(Color.GREEN, context.resources)
     }
 
     override fun onDraw(canvas: Canvas?) {
